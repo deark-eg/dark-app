@@ -1,0 +1,62 @@
+[
+  {
+    "id": "maint-1",
+    "category": "plumbing",
+    "title_ar": "خدمات السباكة المتكاملة والذكية",
+    "title_en": "Complete Smart Plumbing Repairs",
+    "desc_ar": "تركيب وصيانة شبكات المياه والصرف الصحي، كشف وتحديد تسريبات المياه بأحدث الأجهزة الإلكترونية دون أي تكسير لجدران.",
+    "desc_en": "Installation and troubleshooting of water pipes, smart acoustic leakage detection, modern fixture upgrades with zero structural impact.",
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maint-2",
+    "category": "electricity",
+    "title_ar": "أعمال الكهرباء المنزلية وحلول الأتمتة",
+    "title_en": "Home Electrical Setup & Automations",
+    "desc_ar": "تأسيس شبكات الكهرباء، معالجة الأعطال المفاجئة والشورت، وتركيب منظمات الجهد وشواحن المركبات الكهربائية وتجهيز السمارت هوم.",
+    "desc_en": "Full rewiring, troubleshooting short-circuits, voltage stabilizer configs, and smart residential automation integrations.",
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maint-3",
+    "category": "carpenter",
+    "title_ar": "نجارة الأبواب وبناء المطابخ والمفروشات",
+    "title_en": "Exquisite Woodworking & Carpentry",
+    "desc_ar": "صناعة وتركيب وصيانة الأبواب والشبابيك، تجميع وتثبيت غرف النوم الفاخرة، ومطابخ الأكريليك والخشب بتفصيل فني مميز.",
+    "desc_en": "Custom door building, restoration, modular acrylic dynamic kitchen assembly, and fine luxury furniture crafting.",
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maint-4",
+    "category": "ac",
+    "title_ar": "صيانة، تنظيف وتركيب التكييفات",
+    "title_en": "Certified Air Conditioning Services",
+    "desc_ar": "شحن وتعبئة غاز الفريون، غسيل شامل للوحدات الداخلية والخارجية بمضخات الضغط، صيانة وتمديد مواسير النحاس بأعلى أمان.",
+    "desc_en": "Eco-friendly freon gas recharging, deep hydro-cleaning of split grids, and secure copper line extensions.",
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maint-5",
+    "category": "painting",
+    "title_ar": "الدهانات الفاخرة والديكور الحديث",
+    "title_en": "Premium Painting & Interior Decor",
+    "desc_ar": "تنفيذ أحدث الديكورات وأوراق الحائط، دهانات القطيفة والكبوتنيه، معالجة وتقشير الرطوبة بالخرسانة بأساليب كيميائية عازلة.",
+    "desc_en": "Ultra-luxury modern velvet finishes, wallpapers, and advanced moisture barrier chemical treatments.",
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maint-6",
+    "category": "ceramic",
+    "title_ar": "تركيب السيراميك والبورسلين والرخام",
+    "title_en": "Elite Tiling, Porcelain & Marble Placement",
+    "desc_ar": "لصق الأرضيات بأحدث الميزانات الليزر، تركيب البورسلين كبير الحجم بأرقى الغراء والوزرات الرخامية الفاخرة للقصور والشقق.",
+    "desc_en": "Precise laser-guided tiling, monumental porcelain assembly, and custom marble installation.",
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+  }
+]

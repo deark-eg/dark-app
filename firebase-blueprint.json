@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "request": {
+      "title": "Service Request & Customer Registration",
+      "description": "User requested properties or maintenance service details keyed by phone number to handle duplicate detection and track repeat accesses.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Customer's name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Contact phone number"
+        },
+        "service": {
+          "type": "string",
+          "description": "Title or description of the rental option or service requested"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when this record was submitted"
+        },
+        "createdAtArabic": {
+          "type": "string",
+          "description": "Localized Arabic-EG date and time representation"
+        }
+      },
+      "required": ["name", "phone", "service"]
+    },
+    "customer": {
+      "title": "Registered Customer Profile",
+      "description": "Customer's persistent login profile keyed by phone number.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "preferredService": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "createdAtArabic": {
+          "type": "string"
+        },
+        "lastLoginAt": {
+          "type": "string"
+        },
+        "lastLoginAtArabic": {
+          "type": "string"
+        },
+        "loginCount": {
+          "type": "integer"
+        }
+      },
+      "required": ["name", "preferredService"]
+    }
+  },
+  "firestore": {
+    "requests/{requestId}": {
+      "schema": "request",
+      "description": "Submitted service requests and registered clients with repeat detection"
+    },
+    "customers/{customerPhone}": {
+      "schema": "customer",
+      "description": "Persistent customer profiles registered by phone number"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "دارك للخدمات العقارية",
+  "description": "منصتك العقارية الفاخرة للبحث عن السكن الطلابي والخدمات العقارية المتكاملة بأسلوب عصري",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,69 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Safety Net - Default Deny Catch-All
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Requests Collection - Write-Only with Strict Validation
+    match /requests/{requestId} {
+      allow create: if isValidRequest(request.resource.data);
+      allow get, list, update, delete: if false;
+    }
+
+    // Customers Collection - Read Single by Phone and Strict Validation
+    match /customers/{customerPhone} {
+      allow get: if isValidPhone(customerPhone);
+      allow list: if false;
+      allow create: if isValidCustomerCreate(request.resource.data) && request.resource.id == request.resource.data.phone;
+      allow update: if isValidCustomerUpdate(request.resource.data) 
+                    && request.resource.data.phone == resource.data.phone 
+                    && request.resource.data.createdAt == resource.data.createdAt
+                    && request.resource.data.createdAtArabic == resource.data.createdAtArabic
+                    && (request.resource.data.loginCount == resource.data.loginCount + 1);
+      allow delete: if false;
+    }
+
+    // Helper functions for validating formats and lengths
+
+    function isValidPhone(phone) {
+      return phone is string && phone.size() >= 8 && phone.size() <= 20;
+    }
+
+    function isValidRequest(data) {
+      return data.keys().hasAll(['name', 'phone', 'service', 'createdAt', 'createdAtArabic'])
+        && data.keys().size() == 5
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+        && data.phone is string && data.phone.size() >= 8 && data.phone.size() <= 20
+        && data.service is string && data.service.size() > 0 && data.service.size() <= 200
+        && data.createdAt == request.time
+        && data.createdAtArabic is string && data.createdAtArabic.size() <= 100;
+    }
+
+    function isValidCustomerCreate(data) {
+      return data.keys().hasAll(['name', 'phone', 'preferredService', 'createdAt', 'createdAtArabic', 'lastLoginAt', 'lastLoginAtArabic', 'loginCount'])
+        && data.keys().size() == 8
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+        && data.phone is string && data.phone.size() >= 8 && data.phone.size() <= 20
+        && data.preferredService is string && data.preferredService.size() > 0 && data.preferredService.size() <= 200
+        && data.createdAt == request.time
+        && data.createdAtArabic is string && data.createdAtArabic.size() <= 100
+        && data.lastLoginAt == request.time
+        && data.lastLoginAtArabic is string && data.lastLoginAtArabic.size() <= 100
+        && data.loginCount is int && data.loginCount == 1;
+    }
+
+    function isValidCustomerUpdate(data) {
+      return data.keys().hasAll(['name', 'phone', 'preferredService', 'createdAt', 'createdAtArabic', 'lastLoginAt', 'lastLoginAtArabic', 'loginCount'])
+        && data.keys().size() == 8
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+        && data.phone is string && data.phone.size() >= 8 && data.phone.size() <= 20
+        && data.preferredService is string && data.preferredService.size() > 0 && data.preferredService.size() <= 200
+        && data.lastLoginAt == request.time
+        && data.lastLoginAtArabic is string && data.lastLoginAtArabic.size() <= 100
+        && data.loginCount is int;
+    }
+  }
+}
